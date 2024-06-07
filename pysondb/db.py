@@ -53,7 +53,7 @@ class PysonDB:
         if self.auto_update:
             with open(self.filename, encoding='utf-8', mode='w') as f:
                 if UJSON:
-                    ujson.dump(data, f, indent=self.indent)
+                    ujson.dump(data, f, indent=self.indent, ensure_ascii=False)
                 else:
                     json.dump(data, f, indent=self.indent, ensure_ascii=False)
         else:
